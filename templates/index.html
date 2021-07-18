@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <title>Streaming Project</title>
+<head>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+</head>
+<body>
+
+<h1>This is my Project</h1>
+
+<div class=" wrapper">
+  <img src={{ url_for("static", filename = "img/ProjectLogo.png")}} alt="">
+  <h2>Please pick one.</h2>
+
+  <form action="/LiveStream/" method="post">
+    <button name="forwardBtn" style="background-color:#40a4d3;color:white;width:150px;height:40px" type="submit">Live Feed</button>
+</form>
+<form action="/Helicopter/" method="post">
+    <button name="forwardBtn" style="background-color:#40a4d3;color:white;width:150px;height:40px"  type="submit">Static Feed</button>
+</form>
+</div>
+
+</body>
+</html>
