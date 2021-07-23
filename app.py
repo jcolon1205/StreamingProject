@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template, Response
+from flask import Flask,request, render_template, Response
 import cv2
 
 
@@ -16,8 +16,7 @@ def generate_frames():
         else:
             ret,buffer=cv2.imencode('.jpg',frame)
             frame=buffer.tobytes()
-
-        yield(b'--frame\r\n'
+            yield(b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
@@ -49,7 +48,7 @@ def move_LiveStream():
     LiveStream_message = "Moving LiveStream..."
     return render_template('LiveStream.html', LiveStream_message=LiveStream_message)
 
-@app.route("/Helicopter/", methods=['POST'])
+@app.route("/Helicopter", methods=['POST'])
 def move_Helicopter():
     Helicopter_message = "Moving Helicopter..."
     return render_template('Helicopter.html', Helicopter_message=Helicopter_message)
@@ -60,4 +59,4 @@ def video():
     return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
