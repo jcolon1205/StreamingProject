@@ -1,6 +1,6 @@
 from flask import Flask,request,render_template,Response
 import cv2
-import pickle
+
 
 
 app=Flask(__name__)
