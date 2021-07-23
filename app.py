@@ -48,7 +48,7 @@ def move_LiveStream():
     LiveStream_message = "Moving LiveStream..."
     return render_template('LiveStream.html', LiveStream_message=LiveStream_message)
 
-@app.route("/Helicopter", methods=['POST'])
+@app.route("/Helicopter/", methods=['POST'])
 def move_Helicopter():
     Helicopter_message = "Moving Helicopter..."
     return render_template('Helicopter.html', Helicopter_message=Helicopter_message)
